@@ -2,8 +2,10 @@ from flask import Flask
 from flask_restful import Api
 from resource.user import UserAPI
 from models import db
-
 import config
+
+# RabbitMQ is used
+CONFIG = {'AMQP_URI': "amqp://guest:guest@localhost"}
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = config.DB_URI
@@ -13,7 +15,7 @@ db.init_app(app)
 app.debug = config.DEBUG
 api = Api(app)
 
-api.add_resource(UserAPI, '/user')
+api.add_resource(UserAPI, '/api/user')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0')
