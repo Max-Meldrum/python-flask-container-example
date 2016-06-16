@@ -1,6 +1,7 @@
 CHANGES
 =======
 
+* Tox testing with flake8 added
 * Models changed to avoid import at top of file
 * repo fixed
 * double resource removed

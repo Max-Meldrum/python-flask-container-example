@@ -4,8 +4,6 @@ from resource.user import UserAPI
 from models import db
 import config
 
-# RabbitMQ is used
-CONFIG = {'AMQP_URI': "amqp://guest:guest@localhost"}
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = config.DB_URI
