@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_restful import Api
 from resource.user import UserAPI
+from resource.dump import DumpAPI
 from models import db
 import config
 
@@ -14,6 +15,8 @@ app.debug = config.DEBUG
 api = Api(app)
 
 api.add_resource(UserAPI, '/api/user')
+api.add_resource(DumpAPI, '/api/dump')
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')

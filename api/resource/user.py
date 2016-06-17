@@ -14,6 +14,7 @@ class UserAPI(Resource):
         return "hello " + auth.username()
 
     def post(self):
+        """Creating API user."""
         from models import User
         parser = reqparse.RequestParser()
         parser.add_argument('name', required=True, help="Name cannot be blank")
