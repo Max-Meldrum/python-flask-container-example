@@ -1,6 +1,8 @@
 CHANGES
 =======
 
+* added services
+* HTTP auth added
 * Tox testing with flake8 added
 * Models changed to avoid import at top of file
 * repo fixed

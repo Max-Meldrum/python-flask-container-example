@@ -10,6 +10,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = config.DB_URI
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
+# db.app = app
 
 app.debug = config.DEBUG
 api = Api(app)

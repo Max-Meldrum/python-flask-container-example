@@ -14,5 +14,5 @@ class Receiver(object):
     def received(self, data):
         ts = time.time()
         st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
-        self.receiver.log.async(st + data)
+        self.receiver.log_data.async(st + " " + data)
         return "Received data, will log it"

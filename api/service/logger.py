@@ -1,5 +1,4 @@
 from nameko.rpc import rpc
-import logging
 
 
 class Logger(object):
@@ -10,8 +9,7 @@ class Logger(object):
     name = "logger"
 
     @rpc
-    def log(data):
-        logging.basicConfig(filename='log_data.log', level=logging.DEBUG)
-        logging.debug(data)
-
-
+    def log_data(self, data):
+        with open('data.log', 'a') as f:
+            f.write(data + "\n")
+        print("logged")

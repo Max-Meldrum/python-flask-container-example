@@ -9,9 +9,8 @@ auth = HTTPBasicAuth()
 class UserAPI(Resource):
     """API resource for users."""
 
-    @auth.login_required
     def get(self):
-        return "hello " + auth.username()
+        return "hello"
 
     def post(self):
         """Creating API user."""
@@ -31,7 +30,9 @@ class UserAPI(Resource):
         db.session.commit()
         return "User created!"
 
+    @auth.verify_password
     def verify_password(username, password):
+        from models import User
         user = User.query.filter_by(name=username).first()
         if not user or not user.verify_password(password):
             return False
