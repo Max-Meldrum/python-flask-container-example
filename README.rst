@@ -73,12 +73,12 @@ Run the RabbitMQ server::
 Create the logger service::
         
         # Note that you have to enter your ip in the command below, example : 192.168.0.7
-        docker run -d enya-logger nameko run logger --broker amqp://guest:guest@<your-ip>
+        docker run -d meldrum/enya-logger nameko run logger --broker amqp://guest:guest@<your-ip>
 
 Create the receiver service::
 
         # Note that you have to enter your ip in the command below, example : 192.168.0.7
-        docker run -d enya-receiver nameko run receiver --broker amqp://guest:guest@<your-ip>
+        docker run -d meldrum/enya-receiver nameko run receiver --broker amqp://guest:guest@<your-ip>
 
 Finally, sending some data to the API server that will perform RPC calls to log the data::
 
